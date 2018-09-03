@@ -4,59 +4,51 @@ import * as React from 'react';
 import './button.css';
 
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text';
-export type ButtonShape = 'circle-outline' | 'circle';
-export type ButtonSize = 'small' | 'default' | 'large';
-export type ButtonHTMLType = 'submit' | 'button' | 'reset';
+export type ButtonSize = 'small' | 'medium' | 'mini';
 
 export interface InterfaceBaseButtonProps {
   className?: string;
+  disabled?: boolean;
   type?: ButtonType;
   size?: ButtonSize;
-  shape?: ButtonShape;
   icon?: string;
-  loading?: boolean | { delay?: number };
-  prefixCls?: string;
-  ghost?: boolean;
-  block?: boolean;
   children?: React.ReactNode;
 }
 
-export type AnchorButtonProps = {
-  href: string;
-  target?: string;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-} & InterfaceBaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
-
-export type NativeButtonProps = {
-  htmlType?: ButtonHTMLType;
+export type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & InterfaceBaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type ButtonProps = AnchorButtonProps | NativeButtonProps;
-
 export default class Button extends React.Component<ButtonProps, any> {
+  public static defaultProps = {
+    disabled: false,
+    type: 'default'
+  };
+
   public static propTypes = {
-    block: PropTypes.bool,
     className: PropTypes.string,
-    htmlType: PropTypes.oneOf(['submit', 'button', 'reset']),
+    disabled: PropTypes.bool,
     icon: PropTypes.string,
-    loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
     onClick: PropTypes.func,
-    shape: PropTypes.oneOf(['circle', 'circle-outline']),
-    size: PropTypes.oneOf(['large', 'default', 'small']),
+    size: PropTypes.oneOf(['medium', 'mini', 'small']),
     type: PropTypes.string,
   };
+
   constructor(props: ButtonProps) {
     super(props);
-    this.state = {
-      
-    };
+    this.state = {}
   }
+
+  public handleClick: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement> = e => {
+    const { onClick } = this.props;
+    if (onClick) {
+      (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e);
+    }
+  }
+
   public render() {
-    console.log(this.props)
 
-    const { children, className, type, size } = this.props;
-
+    const { children, className, type, size, disabled } = this.props;
     const classes = classNames(
       className,
       `lu-button`, 
@@ -67,7 +59,11 @@ export default class Button extends React.Component<ButtonProps, any> {
     );
 
     return (
-      <button className={classes}>
+      <button 
+        disabled={disabled} 
+        className={classes}
+        onClick={this.handleClick}
+      >
         <span>{children}</span>
       </button>
     );

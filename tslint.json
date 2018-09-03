@@ -13,6 +13,9 @@
     ],
     "only-arrow-functions": [
       false
-    ]
+    ],
+    "jsx-boolean-value": [true, "never"]
   }
 }
+
+
