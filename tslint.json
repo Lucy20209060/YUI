@@ -14,7 +14,8 @@
     "only-arrow-functions": [
       false
     ],
-    "jsx-boolean-value": [true, "never"]
+    "jsx-boolean-value": [true, "never"],
+    "ordered-imports": false
   }
 }
 
