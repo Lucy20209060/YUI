@@ -5,28 +5,24 @@ import './input.css';
 
 export type InputSize = 'default'| 'medium' | 'small' | 'mini';
 
+interface InterfaceMyEventTarget extends EventTarget {
+  value: string
+}
+interface InterfaceMyFormEvent<T> extends React.FormEvent<T> {
+  target: InterfaceMyEventTarget
+}
+
 interface InterfaceInputProps {
   className?: string;
   defaultValue?: string;
   disabled?: boolean;
-  // onChange?: React.MouseEventHandler<HTMLInputElement>;
+  onChange?: React.EventHandler<InterfaceMyFormEvent<Input>>;
   size?: InputSize;
   type?: string;
   value?: string;
 }
-interface IMyEventTarget extends EventTarget {
-  value: string
-}
 
-interface IMyFormEvent<T> extends React.FormEvent<T> {
-  target: IMyEventTarget
-}
-
-interface InputChangeProps extends React.HTMLProps<Input> {
-  onChange?: React.EventHandler<IMyFormEvent<Input>>;
-}
-
-export type InputProps = InterfaceInputProps & InputChangeProps;
+export type InputProps = InterfaceInputProps;
 
 export default class Input extends React.Component<InputProps, any> {
   public static defaultProps = {
@@ -50,7 +46,7 @@ export default class Input extends React.Component<InputProps, any> {
   }
 
   public render() {
-    const { className, type, size, value, defaultValue } = this.props;
+    const { className, defaultValue, type, size, value } = this.props;
     const classes = classNames(
       className,
       `lu-input`, 
@@ -61,22 +57,22 @@ export default class Input extends React.Component<InputProps, any> {
 
     const inputValue = value || defaultValue;
     
-
+    // console.log(inputValue)
     return (
       <div className={classes} >
         <input 
           type={type} 
           value={inputValue}
-          // onChange={this.handleInputChange}
+          onChange={this.handleChange}
         />
       </div>
     );
   }
 
-  // handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-  //   const { onChange } = this.props;
-  //   if (onChange) {
-  //     onChange(e);
-  //   }
-  // }
+   public handleChange = (e:any):any => {
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  }
 }
