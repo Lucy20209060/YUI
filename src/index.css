@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 10px;
   font-family: sans-serif; }
 
 hr {
@@ -11,3 +10,6 @@ hr {
 .title {
   font-size: 30px;
   font-weight: 600; }
+
+[class*="-page"] {
+  padding: 30px; }

@@ -3,10 +3,10 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import './button.css';
 
-export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text';
-export type ButtonSize = 'small' | 'medium' | 'mini';
+type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text';
+type ButtonSize = 'small' | 'medium' | 'mini';
 
-export interface InterfaceBaseButtonProps {
+interface InterfaceBaseButtonProps {
   className?: string;
   disabled?: boolean;
   type?: ButtonType;
@@ -15,7 +15,7 @@ export interface InterfaceBaseButtonProps {
   children?: React.ReactNode;
 }
 
-export type ButtonProps = {
+type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & InterfaceBaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
 

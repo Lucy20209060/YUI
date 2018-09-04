@@ -6,7 +6,6 @@ export default class ButtonPage extends React.Component {
   public render() {
     return (
       <div className="button-page">
-        <p className="title">按钮</p>
         <Button disabled>朴素按钮</Button>
         <Button size="medium">朴素按钮</Button>
         <Button size="small">朴素按钮</Button>
