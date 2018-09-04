@@ -1,7 +1,6 @@
 .lu-input {
   width: 180px;
-  display: inline-flex;
-  font-size: 14px; }
+  display: inline-flex; }
   .lu-input input {
     -webkit-appearance: none;
     background-color: #fff;
@@ -10,10 +9,48 @@
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
     color: #606266;
-    font-size: inherit;
-    height: 40px;
-    line-height: 40px;
     outline: none;
+    font-size: inherit;
     padding: 0 15px;
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%; }
+    .lu-input input:-moz-placeholder {
+      color: #c7cad1;
+      font-weight: 100; }
+    .lu-input input::-moz-placeholder {
+      color: #c7cad1;
+      opacity: 1;
+      font-weight: 100; }
+    .lu-input input:-ms-input-placeholder {
+      color: #c7cad1;
+      font-weight: 100; }
+    .lu-input input::-webkit-input-placeholder {
+      color: #c7cad1;
+      font-weight: 100; }
+    .lu-input input:focus {
+      border-color: #409eff; }
+    .lu-input input[disabled] {
+      background-color: #f5f7fa;
+      border-color: #e4e7ed;
+      color: #c0c4cc;
+      cursor: not-allowed; }
+
+.lu-input-default {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px; }
+
+.lu-input-medium {
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px; }
+
+.lu-input-small {
+  height: 32px;
+  line-height: 32px;
+  font-size: 13px; }
+
+.lu-input-mini {
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px; }

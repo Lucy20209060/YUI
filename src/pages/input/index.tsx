@@ -13,7 +13,7 @@ export default class InputPage extends React.Component {
   constructor(props:any) {
     super(props);
     this.state = {
-      inputDefaultValue: '默认值123',
+      inputDefaultValue: '',
       inputValue: 'value123'
     }
     this.onInputChange = this.onInputChange.bind(this);
@@ -23,11 +23,13 @@ export default class InputPage extends React.Component {
     const {inputDefaultValue, inputValue} = this.state;
     return (
       <div className="input-page">
-        <Input 
-          defaultValue={inputDefaultValue} 
-          value={inputValue} 
-          onChange={this.onInputChange} 
-        />
+        <Input defaultValue={inputDefaultValue} value={inputValue} onChange={this.onInputChange} /> 
+        <hr/>
+        <Input placeholder="请输入账号" size="medium" defaultValue={inputDefaultValue} value={inputValue} />
+        <hr/>
+        <Input size="small" defaultValue={inputDefaultValue} value={inputValue} />
+        <hr/>
+        <Input disabled size="mini" defaultValue={inputDefaultValue} value={inputValue} />
       </div>
     );
   }

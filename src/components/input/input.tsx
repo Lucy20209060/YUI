@@ -17,6 +17,7 @@ interface InterfaceInputProps {
   defaultValue?: string;
   disabled?: boolean;
   onChange?: React.EventHandler<InterfaceMyFormEvent<Input>>;
+  placeholder?: string;
   size?: InputSize;
   type?: string;
   value?: string;
@@ -27,6 +28,7 @@ export type InputProps = InterfaceInputProps;
 export default class Input extends React.Component<InputProps, any> {
   public static defaultProps = {
     disabled: false,
+    placeholder: '请输入内容',
     size: 'default',
     type: 'text',
   };
@@ -36,6 +38,7 @@ export default class Input extends React.Component<InputProps, any> {
     disabled: PropTypes.bool,
     icon: PropTypes.string,
     onClick: PropTypes.func,
+    placeholder: PropTypes.string,
     size: PropTypes.oneOf(['default', 'medium', 'mini', 'small']),
     type: PropTypes.string,
   };
@@ -46,7 +49,7 @@ export default class Input extends React.Component<InputProps, any> {
   }
 
   public render() {
-    const { className, defaultValue, type, size, value } = this.props;
+    const { className, defaultValue, type, size, value, disabled, placeholder } = this.props;
     const classes = classNames(
       className,
       `lu-input`, 
@@ -54,13 +57,13 @@ export default class Input extends React.Component<InputProps, any> {
         [`lu-input-${size}`]: size,
       }
     );
-
     const inputValue = value || defaultValue;
-    
-    // console.log(inputValue)
+
     return (
       <div className={classes} >
         <input 
+          placeholder={placeholder}
+          disabled={disabled}
           type={type} 
           value={inputValue}
           onChange={this.handleChange}
@@ -69,7 +72,7 @@ export default class Input extends React.Component<InputProps, any> {
     );
   }
 
-   public handleChange = (e:any):any => {
+  public handleChange = (e:any):any => {
     const { onChange } = this.props;
     if (onChange) {
       onChange(e.target.value);

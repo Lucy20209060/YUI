@@ -1,7 +1,8 @@
+@import "../style/mixins/index";
+
 .lu-input{
 	width: 180px;
 	display: inline-flex;
-	font-size: 14px;
 	input{
 		-webkit-appearance: none;
     background-color: #fff;
@@ -10,12 +11,40 @@
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
     color: #606266;
-    font-size: inherit;
-    height: 40px;
-    line-height: 40px;
-    outline: none;
+		outline: none;
+		font-size: inherit;
     padding: 0 15px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-    width: 100%;
+		width: 100%;
+		@include placeholder;
+		&:focus{
+			border-color: #409eff;
+		}
+		&[disabled]{
+			background-color: #f5f7fa;
+			border-color: #e4e7ed;
+			color: #c0c4cc;
+			cursor: not-allowed;
+		}
 	}
+}
+.lu-input-default{
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+}
+.lu-input-medium{
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+}
+.lu-input-small{
+	height: 32px;
+	line-height: 32px;
+	font-size: 13px;
+}
+.lu-input-mini{
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
 }
