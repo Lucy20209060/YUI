@@ -40,7 +40,7 @@ export default class Input extends React.Component<InputProps, any> {
     onClick: PropTypes.func,
     placeholder: PropTypes.string,
     size: PropTypes.oneOf(['default', 'medium', 'mini', 'small']),
-    type: PropTypes.string,
+    type: PropTypes.oneOf(['text', 'password']),
   };
 
   constructor(props: InputProps) {

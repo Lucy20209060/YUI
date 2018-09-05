@@ -23,7 +23,7 @@ export default class InputPage extends React.Component {
     const {inputDefaultValue, inputValue} = this.state;
     return (
       <div className="input-page">
-        <Input defaultValue={inputDefaultValue} value={inputValue} onChange={this.onInputChange} /> 
+        <Input type="password" defaultValue={inputDefaultValue} value={inputValue} onChange={this.onInputChange} /> 
         <hr/>
         <Input placeholder="请输入账号" size="medium" defaultValue={inputDefaultValue} value={inputValue} />
         <hr/>
