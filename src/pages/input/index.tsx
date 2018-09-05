@@ -27,7 +27,7 @@ export default class InputPage extends React.Component {
         <hr/>
         <Input placeholder="请输入账号" size="medium" defaultValue={inputDefaultValue} value={inputValue} />
         <hr/>
-        <Input size="small" defaultValue={inputDefaultValue} value={inputValue} />
+        <Input size="small" defaultValue={inputDefaultValue} value={inputValue} onPressEnter={this.onPressEnter} />
         <hr/>
         <Input disabled size="mini" defaultValue={inputDefaultValue} value={inputValue} />
       </div>
@@ -36,5 +36,9 @@ export default class InputPage extends React.Component {
 
   public onInputChange(value:any):void {
     this.setState({ inputValue: value })
+  }
+
+  public onPressEnter(value:any):void{
+    console.log(value)
   }
 }

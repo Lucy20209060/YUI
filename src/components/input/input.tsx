@@ -17,6 +17,7 @@ interface InterfaceInputProps {
   defaultValue?: string;
   disabled?: boolean;
   onChange?: React.EventHandler<InterfaceMyFormEvent<Input>>;
+  onPressEnter?: React.EventHandler<InterfaceMyFormEvent<Input>>;
   placeholder?: string;
   size?: InputSize;
   type?: string;
@@ -38,6 +39,7 @@ export default class Input extends React.Component<InputProps, any> {
     disabled: PropTypes.bool,
     icon: PropTypes.string,
     onClick: PropTypes.func,
+    onPressEnter: PropTypes.func,
     placeholder: PropTypes.string,
     size: PropTypes.oneOf(['default', 'medium', 'mini', 'small']),
     type: PropTypes.oneOf(['text', 'password']),
@@ -67,6 +69,7 @@ export default class Input extends React.Component<InputProps, any> {
           type={type} 
           value={inputValue}
           onChange={this.handleChange}
+          onKeyDown={this.handleEnter}
         />
       </div>
     );
@@ -76,6 +79,13 @@ export default class Input extends React.Component<InputProps, any> {
     const { onChange } = this.props;
     if (onChange) {
       onChange(e.target.value);
+    }
+  }
+
+  public handleEnter = (e:any):any => {
+    const { onPressEnter } = this.props;
+    if (onPressEnter && e.keyCode === 13) {
+      onPressEnter(e.target.value);
     }
   }
 }
