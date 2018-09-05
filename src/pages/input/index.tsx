@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './index.css';
 import { Input } from '../../components'
+const { TextArea } = Input;
 
 interface InterfaceState {
   inputDefaultValue: string,
@@ -30,6 +31,10 @@ export default class InputPage extends React.Component {
         <Input size="small" defaultValue={inputDefaultValue} value={inputValue} onPressEnter={this.onPressEnter} />
         <hr/>
         <Input disabled size="mini" defaultValue={inputDefaultValue} value={inputValue} />
+        <hr/>
+        <Input.TextArea />
+        <hr/>
+        <TextArea />
       </div>
     );
   }

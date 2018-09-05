@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import './input.css';
+import TextArea from './textArea';
 
 export type InputSize = 'default'| 'medium' | 'small' | 'mini';
 
@@ -27,6 +28,8 @@ interface InterfaceInputProps {
 export type InputProps = InterfaceInputProps;
 
 export default class Input extends React.Component<InputProps, any> {
+  public static TextArea: typeof TextArea;
+
   public static defaultProps = {
     disabled: false,
     placeholder: '请输入内容',
