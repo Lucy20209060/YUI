@@ -41,7 +41,6 @@ export default class Input extends React.Component<InputProps, any> {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     icon: PropTypes.string,
-    onClick: PropTypes.func,
     onPressEnter: PropTypes.func,
     placeholder: PropTypes.string,
     size: PropTypes.oneOf(['default', 'medium', 'mini', 'small']),
@@ -85,6 +84,7 @@ export default class Input extends React.Component<InputProps, any> {
     }
   }
 
+  // 回车事件
   public handleEnter = (e:any):any => {
     const { onPressEnter } = this.props;
     if (onPressEnter && e.keyCode === 13) {
