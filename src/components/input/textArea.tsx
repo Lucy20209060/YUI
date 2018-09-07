@@ -55,7 +55,10 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
 		const minRows = autosize ? (autosize as InterfaceAutoSizeType).minRows : null;
 		const maxRows = autosize ? (autosize as InterfaceAutoSizeType).maxRows : null;
 
-		console.log(minRows,maxRows)
+		const styles = {
+			maxHeight: `${maxRows ? 33 + 21 * (maxRows - 1) : null}px`,
+			minHeight: `${minRows ? 33 + 21 * (minRows - 1) : null}px`
+		};
 
     return (
       <div className="lu-textarea">
@@ -63,6 +66,7 @@ export default class TextArea extends React.Component<TextAreaProps, any> {
 					{...otherProps}
 					className={classes}
 					value={textareaValue}
+					style={styles}
 					onChange={this.handleChange}
 				/>
       </div>

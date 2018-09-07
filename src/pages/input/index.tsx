@@ -32,7 +32,13 @@ export default class InputPage extends React.Component {
         <hr/>
         <Input disabled size="mini" defaultValue={inputDefaultValue} value={inputValue} />
         <hr/>
-        <Input.TextArea placeholder="请输入评论" value={inputValue} defaultValue={inputDefaultValue} onChange={this.onInputChange} />
+        <Input.TextArea 
+          placeholder="请输入评论" 
+          value={inputValue} 
+          defaultValue={inputDefaultValue} 
+          onChange={this.onInputChange} 
+          autosize
+        />
         <hr/>
         <TextArea autosize={{ minRows: 2, maxRows: 6 }} />
       </div>
