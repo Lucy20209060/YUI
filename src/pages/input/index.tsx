@@ -36,8 +36,7 @@ export default class InputPage extends React.Component {
           placeholder="请输入评论" 
           value={inputValue} 
           defaultValue={inputDefaultValue} 
-          onChange={this.onInputChange} 
-          autosize
+          onChange={this.onInputChange}
         />
         <hr/>
         <TextArea autosize={{ minRows: 2, maxRows: 6 }} />
