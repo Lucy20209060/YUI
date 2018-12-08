@@ -3,8 +3,6 @@ create-react-app my-app --scripts-version=react-scripts-ts
 
 
 ***
-### 按钮
-
 "ordered-imports": false 引入资源不需要按字母顺序排列
 
 "no-console": [ false ] 允许使用 console.log
@@ -12,6 +10,7 @@ create-react-app my-app --scripts-version=react-scripts-ts
 "jsx-boolean-value": [true, "never"] 允许属性为true时 可以省略 <Button disabled></Button>
 
 ***
+### 按钮
 >按钮类型 primary/success/warning/danger/info/text
 
 ```html
