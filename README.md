@@ -23,4 +23,4 @@ create-react-app my-app --scripts-version=react-scripts-ts
  <Button type="success" size="medium">成功按钮</Button>
 ```
 
-<img src="./utils/img/button-01.png" />
+<img src="./src/utils/img/button-01.png" />
