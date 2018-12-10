@@ -15,7 +15,7 @@ export default class InputPage extends React.Component {
     super(props);
     this.state = {
       inputDefaultValue: '',
-      inputValue: 'value123'
+      inputValue: '12345'
     }
     this.onInputChange = this.onInputChange.bind(this);
   }
