@@ -37,3 +37,5 @@ create-react-app my-app --scripts-version=react-scripts-ts
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :--- | :--- |
 | type | 输入框类型 | string | text/password | text |
+
+<img src="./src/utils/img/input-01.png" />
