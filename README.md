@@ -11,24 +11,27 @@ create-react-app my-app --scripts-version=react-scripts-ts
 
 ***
 ### 按钮
->按钮类型 primary/success/warning/danger/info/text
 
 ```html
- <Button type="warning">警告按钮</Button>
+<Button type="danger" size="mini">危险按钮</Button>
 ```
 
->按钮大小 small/medium/mini
+>属性
 
-```html
- <Button type="success" size="medium">成功按钮</Button>
-```
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- |
+| type | 按钮类型 | string | primary/success/warning/danger/info/text | primary |
+| size | 大小 | string | small/medium/mini | |
 
 <img src="./src/utils/img/button-01.png" />
 
+
 ### 输入框
+
 ```html
 <Input type="password" defaultValue={inputDefaultValue} value={inputValue} onChange={this.onInputChange} />
 ```
+
 >属性
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
