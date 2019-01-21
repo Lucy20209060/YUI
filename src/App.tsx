@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import ButtonPage from './pages/Button';
-import IndexPage from './pages/Index';
-import InputPage from './pages/Input';
+import ButtonPage from './pages/button';
+import IndexPage from './pages/index';
+import InputPage from './pages/input';
 
 export default class App extends React.Component {
   public render() {
