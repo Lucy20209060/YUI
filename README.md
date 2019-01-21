@@ -2,6 +2,8 @@
 
 >react UI框架
 
+[![](https://travis-ci.org/Lucy20209060/YUI.svg?branch=master)](https://travis-ci.org/Lucy20209060/YUI)
+
 备注：
 
 * npm install -g create-react-app
