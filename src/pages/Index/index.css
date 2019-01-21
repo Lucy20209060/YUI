@@ -1,8 +1,0 @@
-.index-page span {
-  display: flex;
-  padding: 5px; }
-  .index-page span a {
-    color: #409eff;
-    text-decoration: none; }
-    .index-page span a:hover {
-      text-decoration: underline; }
