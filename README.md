@@ -42,5 +42,3 @@
 | type | 输入框类型 | string | text/password | text |
 
 <img src="./src/utils/img/input-01.png" />
-
->Additional Information
