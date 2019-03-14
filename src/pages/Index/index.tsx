@@ -8,6 +8,12 @@ const menu = [
 ]
 
 export default class IndexPage extends React.Component {
+  // public componentDidMount() {
+  //   const someValue: any = "this is a string";
+
+  //   const strLength: number = (someValue as string).length;
+  //   console.log(strLength)
+  // }
   public render() {
     return (
       <div className="index-page">

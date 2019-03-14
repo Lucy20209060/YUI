@@ -1,5 +1,5 @@
 <p align="center" style="font-size:50px">YUI</p>
-<p align="center">react UI框架</p>
+<p align="center">react UI组件库</p>
 <p align="center">
   <a href="https://travis-ci.org/Lucy20209060/YUI"><img src="https://travis-ci.org/Lucy20209060/YUI.svg?branch=master"></a>
 </p>
